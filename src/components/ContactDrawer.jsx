@@ -15,7 +15,7 @@ const ContactDrawer = ({ open, onClose }) => {
     name: "",
     email: "",
     mobile: "",
-    location: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -36,7 +36,7 @@ const ContactDrawer = ({ open, onClose }) => {
         setTimeout(() => {
           toast.success("Message mock-sent successfully!");
           setLoading(false);
-          setFormData({ name: "", email: "", mobile: "", location: "" });
+          setFormData({ name: "", email: "", mobile: "", message: "" });
           onClose();
         }, 1000);
         return;
@@ -49,13 +49,13 @@ const ContactDrawer = ({ open, onClose }) => {
           from_name: formData.name,
           from_email: formData.email,
           mobile: formData.mobile,
-          location: formData.location,
+          message: formData.message,
           to_email: "contact@acuronai.com",
         },
         EMAILJS_PUBLIC_KEY
       );
       toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", mobile: "", location: "" });
+      setFormData({ name: "", email: "", mobile: "", message: "" });
       onClose();
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
@@ -128,14 +128,15 @@ const ContactDrawer = ({ open, onClose }) => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="location" className="text-sm font-medium">Location / Company</label>
-                <input
-                  id="location"
-                  name="location"
-                  value={formData.location}
+                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
-                  placeholder="New York, NY"
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="Tell us about your project or inquiry..."
+                  rows={4}
+                  className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
 

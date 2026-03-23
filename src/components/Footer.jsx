@@ -20,7 +20,7 @@ const Footer = () => {
                 }}
               />
               <span className="font-heading font-bold text-xl text-foreground">
-                Acuron <span className="text-primary">AI</span>
+                Acuron <span className="text-foreground">AI</span>
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">

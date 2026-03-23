@@ -2,32 +2,32 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenContact }) => {
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#0a0e1a]">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover -translate-x-1/2 -translate-y-1/2 opacity-40 dark:opacity-50"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover -translate-x-1/2 -translate-y-1/2 opacity-70 dark:opacity-75"
         >
           <source src="/AI_Showcase_Video_Generation_Request.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-gradient-start))/0.8] to-[hsl(var(--hero-gradient-end))/0.9]" />
+      {/* Background Overlay — keeps video visible while ensuring text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/55 via-[#0d1224]/45 to-[#0a0e1a]/60 dark:from-black/50 dark:via-black/35 dark:to-black/55" />
 
-      {/* Animated orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl animate-float" />
+      {/* Animated orbs — subtler so they blend with the video */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/8 blur-3xl animate-float" />
       <div
-        className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-accent/10 blur-3xl animate-float"
+        className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-accent/8 blur-3xl animate-float"
         style={{ animationDelay: "1.5s" }}
       />
 
@@ -79,10 +79,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.45 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button variant="hero" size="lg" className="text-base" asChild>
-            <a href="#contact">
-              Get in Touch <ArrowRight size={18} />
-            </a>
+          <Button variant="hero" size="lg" className="text-base" onClick={onOpenContact}>
+            Get in Touch <ArrowRight size={18} />
           </Button>
           <Button
             variant="outline-hero"
