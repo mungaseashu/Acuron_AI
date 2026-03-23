@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
+    --background: 0 0% 100%;
     --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
@@ -40,7 +40,7 @@
     --hero-gradient-start: 215 30% 16%;
     --hero-gradient-end: 220 35% 8%;
     --card-hover-shadow: 174 100% 42% / 0.15;
-    --section-alt: 210 20% 96%;
+    --section-alt: 0 0% 100%;
     --glow: 174 100% 42%;
 
     --sidebar-background: 0 0% 98%;
@@ -51,10 +51,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --footer-background: 240 5% 96%;
   }
 
   .dark {
-    --background: 220 25% 6%;
+    --background: 0 0% 0%;
     --foreground: 210 20% 92%;
 
     --card: 220 22% 10%;
@@ -86,7 +87,7 @@
     --hero-gradient-start: 215 35% 12%;
     --hero-gradient-end: 220 40% 4%;
     --card-hover-shadow: 174 100% 42% / 0.2;
-    --section-alt: 220 22% 8%;
+    --section-alt: 0 0% 0%;
     --glow: 174 100% 42%;
 
     --sidebar-background: 240 5.9% 10%;
@@ -97,6 +98,7 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --footer-background: 240 5% 10%;
   }
 }
 

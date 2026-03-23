@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-card border-t border-border/50">
+    <footer className="relative bg-footer border-t border-border/50">
       {/* Glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 

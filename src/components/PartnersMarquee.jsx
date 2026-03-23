@@ -3,14 +3,14 @@ const partners = [
     name: "TATA",
     logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg",
   },
-  {
-    name: "Microsoft",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-  },
-  {
-    name: "NVIDIA",
-    logo: "https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg",
-  },
+  // {
+  //   name: "Microsoft",
+  //   logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+  // },
+  // {
+  //   name: "NVIDIA",
+  //   logo: "https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg",
+  // },
   {
     name: "Attributum",
     logo: "/Attributum logo.svg",
