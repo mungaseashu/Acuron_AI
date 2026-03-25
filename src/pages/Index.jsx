@@ -19,7 +19,7 @@ const Index = () => {
       <ServicesSection />
       <CapabilitiesSection />
       <WhySection />
-      <Footer />
+      <Footer onOpenContact={() => setContactOpen(true)} />
     </div>
   );
 };

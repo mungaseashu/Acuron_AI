@@ -84,18 +84,26 @@ const ServicesSection = () => {
 
               {/* Content overlay */}
               <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end">
+                {/* Icon reveal on hover (above title) */}
+                <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                  <div className="overflow-hidden flex flex-col justify-end">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-md flex items-center justify-center border border-primary/30 opacity-0 group-hover/card:opacity-100 transition-all duration-500 delay-100 mb-3 transform translate-y-4 group-hover/card:translate-y-0">
+                      <service.icon className="w-5 h-5 text-primary" />
+                    </div>
+                  </div>
+                </div>
+
                 {/* Always visible title */}
-                <h3 className="font-heading font-semibold text-xl text-white mb-2 translate-y-8 group-hover/card:translate-y-0 transition-transform duration-500 ease-out">
+                <h3 className="font-heading font-semibold text-xl text-white mb-0 group-hover/card:mb-2 transition-all duration-500 ease-out">
                   {service.title}
                 </h3>
                 
-                {/* Description and icon reveal on hover */}
-                <div className="opacity-0 translate-y-6 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-500 delay-100 ease-out flex flex-col gap-4">
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-md flex items-center justify-center border border-primary/30">
-                    <service.icon className="w-5 h-5 text-primary" />
+                {/* Description reveal on hover (below title) */}
+                <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-sm text-gray-300 leading-relaxed opacity-0 group-hover/card:opacity-100 transition-all duration-500 delay-100 transform translate-y-4 group-hover/card:translate-y-0">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
               </div>

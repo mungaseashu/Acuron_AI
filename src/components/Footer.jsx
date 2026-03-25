@@ -1,6 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Linkedin } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ onOpenContact }) => {
   return (
     <footer className="relative bg-footer border-t border-border/50">
       {/* Glow line */}
@@ -38,7 +38,13 @@ const Footer = () => {
                 (link) => (
                   <li key={link}>
                     <a
-                      href={`#${link.toLowerCase().replace(" ", "-").replace("why-us", "why")}`}
+                      href={link === "Contact" ? "#" : `#${link.toLowerCase().replace(" ", "-").replace("why-us", "why")}`}
+                      onClick={(e) => {
+                        if (link === "Contact" && onOpenContact) {
+                          e.preventDefault();
+                          onOpenContact();
+                        }
+                      }}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 group"
                     >
                       {link}
@@ -92,6 +98,17 @@ const Footer = () => {
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   +91 9552033662
+                </a>
+              </li>
+              <li className="pt-10">
+                <a
+                  href="https://www.linkedin.com/company/acuron-ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-xl border border-border/50 bg-background hover:bg-[#0A66C2]/5 text-muted-foreground hover:text-[#0A66C2] hover:border-[#0A66C2]/30 transition-all shadow-md"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={22} strokeWidth={2} className="fill-current" />
                 </a>
               </li>
             </ul>

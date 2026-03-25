@@ -9,37 +9,21 @@ const HeroSection = ({ onOpenContact }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#0a0e1a]">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover -translate-x-1/2 -translate-y-1/2 opacity-70 dark:opacity-75"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover -translate-x-1/2 -translate-y-1/2"
         >
           <source src="/AI_Showcase_Video_Generation_Request.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Background Overlay — keeps video visible while ensuring text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/55 via-[#0d1224]/45 to-[#0a0e1a]/60 dark:from-black/50 dark:via-black/35 dark:to-black/55" />
-
-      {/* Animated orbs — subtler so they blend with the video */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/8 blur-3xl animate-float" />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-accent/8 blur-3xl animate-float"
-        style={{ animationDelay: "1.5s" }}
-      />
-
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Clear Dark Overlay for Text Contrast */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.div
@@ -56,7 +40,7 @@ const HeroSection = ({ onOpenContact }) => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-[hsl(210,20%,95%)]"
+          className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-white drop-shadow-xl"
         >
           Enterprise-Grade AI
           <br />
@@ -67,7 +51,7 @@ const HeroSection = ({ onOpenContact }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-xl text-[hsl(210,15%,70%)] max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 drop-shadow-lg"
         >
           We build AI solutions that work — locally, in the cloud, and
           everywhere in between.

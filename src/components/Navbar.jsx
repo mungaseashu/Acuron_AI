@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       <ContactDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white dark:bg-background/80 border-b border-border/50">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <a href="#home" className="flex items-center gap-2 pl-20">
             <img

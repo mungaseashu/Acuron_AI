@@ -100,7 +100,7 @@ const ContactDrawer = ({ open, onClose }) => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                   className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -112,7 +112,7 @@ const ContactDrawer = ({ open, onClose }) => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="xyz@example.com"
                   className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -123,7 +123,7 @@ const ContactDrawer = ({ open, onClose }) => {
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+91 95XXX XXXXX"
                   className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
