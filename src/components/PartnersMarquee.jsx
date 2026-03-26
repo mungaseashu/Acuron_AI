@@ -34,11 +34,11 @@ const PartnersMarquee = () => {
           {[...Array(16)].flatMap(() => partners).map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="group flex items-center justify-center mx-8 md:mx-12 min-w-[120px] md:min-w-[140px] h-12 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="group flex items-center justify-center mx-8 md:mx-12 min-w-[140px] md:min-w-[160px] h-14 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               {partner.name === "TATA" ? (
                 <div
-                  className="h-8 md:h-10 w-full max-w-[100px] bg-foreground dark:bg-white group-hover:!bg-[#1268B3] transition-colors duration-300"
+                  className="h-10 md:h-12 w-full max-w-[120px] bg-foreground dark:bg-white group-hover:!bg-[#1268B3] transition-colors duration-300"
                   style={{
                     maskImage: `url('${partner.logo}')`,
                     WebkitMaskImage: `url('${partner.logo}')`,
@@ -54,7 +54,7 @@ const PartnersMarquee = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-8 md:h-10 w-auto object-contain dark:invert group-hover:dark:invert-0 transition-all duration-300"
+                  className="h-10 md:h-12 w-auto object-contain dark:invert group-hover:dark:invert-0 transition-all duration-300"
                 />
               )}
             </div>
