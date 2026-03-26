@@ -102,7 +102,7 @@ const Footer = ({ onOpenContact }) => {
               </li>
               <li className="pt-10">
                 <a
-                  href="https://www.linkedin.com/company/acuron-ai/"
+                  href="https://www.linkedin.com/company/acuron-ai-solutions/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-12 h-12 rounded-xl border border-border/50 bg-background hover:bg-[#0A66C2]/5 text-muted-foreground hover:text-[#0A66C2] hover:border-[#0A66C2]/30 transition-all shadow-md"
