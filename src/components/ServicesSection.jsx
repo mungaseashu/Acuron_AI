@@ -25,10 +25,10 @@ const services = [
   },
   {
     icon: BarChart3,
-    title: "Predictive Analytics",
+    title: "Email Automation",
     description:
-      "Utilize AI-driven predictions to guide strategic actions across logistics, retail, finance, and more with data-informed insights.",
-    image: "/AI4.png",
+      "Automatically convert emails and requests into structured workflows—validated, routed, and executed without manual effort.",
+    image: "/E1.png",
   },
 ];
 
@@ -56,8 +56,11 @@ const ServicesSection = () => {
             What We Do
           </span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold mt-3 text-foreground">
-            Our Services
+            Our Systems
           </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            We automate entrire business processes - not just tasks.
+          </p>
         </motion.div>
 
         {/* group/list scope allows us to blur all non-hovered cards when one is active */}
@@ -97,7 +100,7 @@ const ServicesSection = () => {
                 <h3 className="font-heading font-semibold text-xl text-white mb-0 group-hover/card:mb-2 transition-all duration-500 ease-out">
                   {service.title}
                 </h3>
-                
+
                 {/* Description reveal on hover (below title) */}
                 <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
                   <div className="overflow-hidden">

@@ -42,9 +42,9 @@ const HeroSection = ({ onOpenContact }) => {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-white drop-shadow-xl"
         >
-          Enterprise-Grade AI
+          AI Systems That Run Your
           <br />
-          <span className="text-gradient">That Performs</span>
+          <span className="text-gradient">Business Operations</span>
         </motion.h1>
 
         <motion.p
@@ -53,8 +53,8 @@ const HeroSection = ({ onOpenContact }) => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 drop-shadow-lg"
         >
-          We build AI solutions that work — locally, in the cloud, and
-          everywhere in between.
+          We build AI-powered systems that understand requests, make decisions
+          and execute workflows, helping businesses grow without increasing headcount.
         </motion.p>
 
         <motion.div

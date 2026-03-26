@@ -24,7 +24,7 @@ const Footer = ({ onOpenContact }) => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Enterprise-grade AI solutions deployed where it matters most.
+              From manual operations to autonomous systems.
             </p>
           </div>
 
