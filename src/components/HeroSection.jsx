@@ -15,6 +15,7 @@ const HeroSection = ({ onOpenContact }) => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover -translate-x-1/2 -translate-y-1/2"
         >
           <source src="/AI_Showcase_Video_Generation_Request.mp4" type="video/mp4" />
