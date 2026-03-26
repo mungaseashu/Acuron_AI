@@ -188,7 +188,6 @@ const CapabilitiesSection = () => {
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
                   >
-                    <h5 className="font-semibold text-primary mb-3 text-sm uppercase tracking-wider">Detailed Information</h5>
                     <p className="text-muted-foreground leading-relaxed text-sm">
                       {activeCard.details}
                     </p>
