@@ -5,9 +5,9 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_jqbc2tb";
+const EMAILJS_TEMPLATE_ID = "template_27cmhbz";
+const EMAILJS_PUBLIC_KEY = "R-1VMZOYBVgnqV8ka";
 
 const ContactDrawer = ({ open, onClose }) => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const ContactDrawer = ({ open, onClose }) => {
       toast.error("Please fill required fields (Name and Email).");
       return;
     }
-    
+
     setLoading(true);
     try {
       if (EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID") {
