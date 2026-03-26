@@ -6,6 +6,10 @@ import {
   MonitorCheck,
   Brain,
   Trophy,
+  Landmark,
+  Briefcase,
+  Factory,
+  Headset,
 } from "lucide-react";
 
 const reasons = [
@@ -41,9 +45,33 @@ const reasons = [
   },
 ];
 
+const impactAreas = [
+  {
+    icon: Landmark,
+    title: "Banking & Insurance",
+    items: ["Claims automation", "Policy issuance", "TPA workflows"],
+  },
+  {
+    icon: Briefcase,
+    title: "Enterprise Operations",
+    items: ["Approval workflows", "Vendor onboarding", "Internal request automation"],
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing",
+    items: ["Safety monitoring (vision AI)", "Workforce tracking", "Incident automation"],
+  },
+  {
+    icon: Headset,
+    title: "Customer Operations",
+    items: ["Email + voice support", "Complaint handling", "SLA workflows"],
+  },
+];
+
 const WhySection = () => {
   return (
-    <section id="why" className="py-24 bg-background">
+    <>
+      <section id="why" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,6 +116,58 @@ const WhySection = () => {
         </div>
       </div>
     </section>
+
+      {/* Impact Section */}
+      <section id="impact" className="py-12 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-widest">
+              Industries
+            </span>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mt-3 text-foreground">
+              Impact Areas
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+             AI systems tailored to high impact business processes across industries.
+          </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {impactAreas.map((area, i) => (
+              <motion.div
+                key={area.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 text-primary">
+                  <area.icon className="w-6 h-6 shrink-0" />
+                </div>
+                <h4 className="text-xl font-heading font-semibold mb-4 text-card-foreground">
+                  {area.title}
+                </h4>
+                <ul className="space-y-3">
+                  {area.items.map((item, idx) => (
+                    <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-1.5 mr-2.5 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
