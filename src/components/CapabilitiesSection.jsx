@@ -16,42 +16,42 @@ const capabilities = [
     id: "c1",
     icon: ScanFace,
     title: "AI Surveillance & Recognition",
-    info: "Long-Range Facial Recognition, Smart Access Control, Perimeter Monitoring",
+    details: "Empower your security infrastructure with state-of-the-art AI. This module features long-range facial recognition to identify individuals from a distance, smart access control utilizing robust biometrics, and continuous perimeter monitoring to instantly flag unauthorized intrusions.",
     image: "/C1.png"
   },
   {
     id: "c2",
     icon: Radar,
     title: "Real-Time Tracking & Activity Intelligence",
-    info: "Object & Person Tracking, Activity Detection",
+    details: "Enhance situational awareness with intelligent tracking. Our AI seamlessly monitors multi-camera feeds for precise object and person tracking. It also features advanced activity detection that automatically flags unusual human actions like running, falling, or loitering.",
     image: "/C2.png"
   },
   {
     id: "c3",
     icon: Flame,
     title: "AI Safety & Threat Detection",
-    info: "AI Fire & Smoke Detection",
+    details: "Ensure a safer environment with rapid threat identification. Our computer vision algorithms are trained for highly accurate AI fire and smoke detection, allowing for immediate automated alerts and rapid deployment of emergency response teams before incidents escalate.",
     image: "/C3.png"
   },
   {
     id: "c4",
     icon: Car,
     title: "Smart Traffic & Mobility Analytics",
-    info: "Traffic Analytics",
+    details: "Optimize urban flow and safety with comprehensive traffic analytics. Analyze vehicle movement patterns, detect traffic violations in real-time, and gain actionable insights for smarter city planning, parking management, and efficient law enforcement.",
     image: "/C4.png"
   },
   {
     id: "c5",
     icon: FileText,
     title: "Document Intelligence & Automation",
-    info: "Document Digitization with OCR",
+    details: "Streamline your workflows by transforming physical data into actionable insights. Employing robust AI-powered OCR, this system provides accurate document digitization, seamlessly converting scanned files, invoices, and records into fully searchable and editable digital formats.",
     image: "/C5.png"
   },
   {
     id: "c6",
     icon: Headphones,
     title: "AI Media & Content Generation",
-    info: "AI Audiobook Creation, Dubbing with Lip-Sync",
+    details: "Revolutionize your content creation process with advanced generative AI. This includes creating high-quality AI audiobooks with incredibly natural, human-like voice synthesis, as well as providing multilingual dubbing with perfect lip-sync capabilities for global outreach.",
     image: "/C6.png"
   },
 ];
@@ -133,19 +133,15 @@ const CapabilitiesSection = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col items-center gap-6">
-          {/* First Row: 4 Items */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
-            {capabilities.slice(0, 4).map((cap, i) => (
-              <CapabilityCard key={cap.id} cap={cap} onOpen={() => setActiveCard(cap)} index={i} />
-            ))}
-          </div>
-          {/* Second Row: 2 Items centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
-            {capabilities.slice(4, 6).map((cap, i) => (
-              <CapabilityCard key={cap.id} cap={cap} onOpen={() => setActiveCard(cap)} index={i + 4} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
+          {capabilities.map((cap, i) => (
+            <div 
+              key={cap.id} 
+              className={i === 4 ? "lg:col-start-2" : ""}
+            >
+              <CapabilityCard cap={cap} onOpen={() => setActiveCard(cap)} index={i} />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -192,15 +188,10 @@ const CapabilitiesSection = () => {
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
                   >
-                    <h5 className="font-semibold text-primary mb-3 text-sm uppercase tracking-wider">Included Capabilities:</h5>
-                    <ul className="space-y-3 text-muted-foreground">
-                      {activeCard.info.split(',').map((item, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="mr-3 mt-1.5 text-primary text-[10px]">●</span>
-                          <span className="leading-relaxed">{item.trim()}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <h5 className="font-semibold text-primary mb-3 text-sm uppercase tracking-wider">Detailed Information</h5>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {activeCard.details}
+                    </p>
                   </motion.div>
                 </div>
               </motion.div>
