@@ -60,7 +60,7 @@ const capabilities = [
     icon: Activity,
     title: "Biomedical AI Agents",
     details: "AI agents that analyze biological data in real time, detecting patterns and anomalies in medical imagery to enable faster, more accurate diagnostics.",
-    image: "/RBC1.png"
+    image: "/RBC3.png"
   },
 ];
 
