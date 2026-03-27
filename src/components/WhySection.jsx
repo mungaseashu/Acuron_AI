@@ -10,6 +10,18 @@ import {
   Briefcase,
   Factory,
   Headset,
+  TrendingUp,
+  ShieldCheck,
+  Zap,
+  Clock,
+  CheckCircle2,
+  BarChart,
+  Bot,
+  FileText,
+  Users,
+  AlertTriangle,
+  MessageSquare,
+  Activity
 } from "lucide-react";
 
 const reasons = [
@@ -49,22 +61,50 @@ const impactAreas = [
   {
     icon: Landmark,
     title: "Banking & Insurance",
-    items: ["Claims automation", "Policy issuance", "TPA workflows"],
+    outcome: "Accelerate financial approvals",
+    //metric: "3x Faster Processing",
+    metricIcon: Zap,
+    items: [
+      { text: "Claims automation", icon: FileText },
+      { text: "Policy issuance", icon: ShieldCheck },
+      { text: "TPA workflows", icon: Building2 },
+    ],
   },
   {
     icon: Briefcase,
     title: "Enterprise Operations",
-    items: ["Approval workflows", "Vendor onboarding", "Internal request automation"],
+    outcome: "Streamline core processes",
+    //metric: "-40% Operational Costs",
+    metricIcon: TrendingUp,
+    items: [
+      { text: "Approval workflows", icon: CheckCircle2 },
+      { text: "Vendor onboarding", icon: Users },
+      { text: "Internal request automation", icon: Bot },
+    ],
   },
   {
     icon: Factory,
     title: "Manufacturing",
-    items: ["Safety monitoring (vision AI)", "Workforce tracking", "Incident automation"],
+    outcome: "Enhance safety & productivity",
+    //metric: "99.9% Incident Detection",
+    metricIcon: Activity,
+    items: [
+      { text: "Safety monitoring (vision AI)", icon: MonitorCheck },
+      { text: "Workforce tracking", icon: Users },
+      { text: "Incident automation", icon: AlertTriangle },
+    ],
   },
   {
     icon: Headset,
     title: "Customer Operations",
-    items: ["Email + voice support", "Complaint handling", "SLA workflows"],
+    outcome: "Deliver exceptional 24/7 support",
+    //metric: "+50% CSAT Score",
+    metricIcon: BarChart,
+    items: [
+      { text: "Email + voice support", icon: MessageSquare },
+      { text: "Complaint handling", icon: ShieldCheck },
+      { text: "SLA workflows", icon: Clock },
+    ],
   },
 ];
 
@@ -146,19 +186,38 @@ const WhySection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 group"
+                className="relative p-7 rounded-2xl bg-card border border-border/50 hover:border-primary/40 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group overflow-hidden flex flex-col h-full"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 text-primary">
-                  <area.icon className="w-6 h-6 shrink-0" />
+                {/* Hover Gradient Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="flex justify-between items-start mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 text-primary shadow-sm space-x-0">
+                    <area.icon className="w-7 h-7 shrink-0" />
+                  </div>
+                  
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-400 border border-green-500/20 text-xs font-semibold shadow-sm">
+                     <area.metricIcon className="w-3.5 h-3.5" />
+                     <span>{area.metric}</span>
+                  </div>
                 </div>
-                <h4 className="text-xl font-heading font-semibold mb-4 text-card-foreground">
-                  {area.title}
-                </h4>
-                <ul className="space-y-3">
+
+                <div className="relative z-10 flex-grow">
+                  <h4 className="text-xl font-heading font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
+                    {area.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                    {area.outcome}
+                  </p>
+                </div>
+                
+                <ul className="space-y-3.5 relative z-10 mt-auto pt-5 border-t border-border/50">
                   {area.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-1.5 mr-2.5 shrink-0" />
-                      <span>{item}</span>
+                    <li key={idx} className="flex items-center text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <div className="w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center mr-3 group-hover:bg-primary/10 transition-colors">
+                        <item.icon className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary shrink-0 transition-colors" />
+                      </div>
+                      <span>{item.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -172,4 +231,3 @@ const WhySection = () => {
 };
 
 export default WhySection;
-// hello

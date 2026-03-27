@@ -17,14 +17,14 @@ const capabilities = [
     icon: ScanFace,
     title: "AI Surveillance & Recognition",
     details: "Empower your security infrastructure with state-of-the-art AI. This module features long-range facial recognition to identify individuals from a distance, smart access control utilizing robust biometrics, and continuous perimeter monitoring to instantly flag unauthorized intrusions.",
-    image: "/C1.png"
+    image: "/ai-monitoring.jpg"
   },
   {
     id: "c2",
     icon: Radar,
     title: "Real-Time Tracking & Activity Intelligence",
     details: "Enhance situational awareness with intelligent tracking. Our AI seamlessly monitors multi-camera feeds for precise object and person tracking. It also features advanced activity detection that automatically flags unusual human actions like running, falling, or loitering.",
-    image: "/C2.png"
+    image: "/obj&perTracking.png"
   },
   {
     id: "c3",
@@ -38,14 +38,14 @@ const capabilities = [
     icon: Car,
     title: "Smart Traffic & Mobility Analytics",
     details: "Optimize urban flow and safety with comprehensive traffic analytics. Analyze vehicle movement patterns, detect traffic violations in real-time, and gain actionable insights for smarter city planning, parking management, and efficient law enforcement.",
-    image: "/C4.png"
+    image: "/smart-traffic.jpg"
   },
   {
     id: "c5",
     icon: FileText,
     title: "Document Intelligence & Automation",
     details: "Streamline your workflows by transforming physical data into actionable insights. Employing robust AI-powered OCR, this system provides accurate document digitization, seamlessly converting scanned files, invoices, and records into fully searchable and editable digital formats.",
-    image: "/C5.png"
+    image: "/DigiDoc1.png"
   },
   {
     id: "c6",

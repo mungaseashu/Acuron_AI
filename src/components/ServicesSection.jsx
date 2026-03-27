@@ -18,7 +18,7 @@ const services = [
   },
   {
     icon: Mic,
-    title: "Voice, NLP & Multimodal AI",
+    title: "AI Voice & AI Agents",
     description:
       "Custom models for speech, language, image, and video — fused into actionable, human-like intelligence that scales.",
     image: "/AI3.png",
