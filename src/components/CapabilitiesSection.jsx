@@ -7,6 +7,7 @@ import {
   Car,
   FileText,
   Headphones,
+  Activity,
   X
 } from "lucide-react";
 import { CardSpotlight } from "./CardSpotlight";
@@ -53,6 +54,13 @@ const capabilities = [
     title: "AI Media & Content Generation",
     details: "Revolutionize your content creation process with advanced generative AI. This includes creating high-quality AI audiobooks with incredibly natural, human-like voice synthesis, as well as providing multilingual dubbing with perfect lip-sync capabilities for global outreach.",
     image: "/C6.png"
+  },
+  {
+    id: "c7",
+    icon: Activity,
+    title: "Biomedical AI Agents",
+    details: "AI agents that analyze biological data in real time, detecting patterns and anomalies in medical imagery to enable faster, more accurate diagnostics.",
+    image: "/RBC1.png"
   },
 ];
 
@@ -133,11 +141,11 @@ const CapabilitiesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto">
           {capabilities.map((cap, i) => (
             <div 
               key={cap.id} 
-              className={i === 4 ? "lg:col-start-2" : ""}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               <CapabilityCard cap={cap} onOpen={() => setActiveCard(cap)} index={i} />
             </div>

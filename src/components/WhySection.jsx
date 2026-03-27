@@ -191,14 +191,9 @@ const WhySection = () => {
                 {/* Hover Gradient Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <div className="flex justify-between items-start mb-6 relative z-10">
+                <div className="mb-6 relative z-10">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 text-primary shadow-sm space-x-0">
                     <area.icon className="w-7 h-7 shrink-0" />
-                  </div>
-                  
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-400 border border-green-500/20 text-xs font-semibold shadow-sm">
-                     <area.metricIcon className="w-3.5 h-3.5" />
-                     <span>{area.metric}</span>
                   </div>
                 </div>
 
